@@ -1,12 +1,12 @@
 # Fase 1 — Tasks gerais · Ynova Educacional
 
-**Champion:** Carlos · **Deadline:** 22/09/2026 · **Estado:** 0/8 concluídas; somente F1-T01 elegível.
+**Champion:** Carlos · **Deadline:** 22/09/2026 · **Estado:** 0/8 concluídas; somente F1-T01 autorizada para execução.
 
 ## Tasks
 
 | ID | Task | Dono | SPEC | Critério | Subseção | Recorte da prova | Evidência esperada | Pré-condições | Ponto de parada | Leva | Status |
 |---|---|---|---|---|---|---|---|---|---|---:|---|
-| F1-T01 | Fechar contrato de entrada, política e ambiente de teste | @Carlos | SPEC-1-001 | CA-1-001, CA-1-006 | Contexto e decisões fechadas; Critérios de aceite | Contrato versionado + registro B1-001..004 + aceite explícito do Champion | Contrato, matriz mínima, fixture sintética e recibo de aceite | SPECs F1 aprovadas | B1-001..004 fechados; nenhuma ingestão real | 1 | ELEGÍVEL |
+| F1-T01 | Fechar contrato de entrada, política e ambiente de teste | @Carlos | SPEC-1-001 | CA-1-001, CA-1-006 | Contexto e decisões fechadas; Critérios de aceite | Contrato versionado + registro B1-001..004 + aceite explícito do Champion | Contrato, matriz mínima, fixture sintética e recibo de aceite | SPECs F1 aprovadas | B1-001..004 fechados; nenhuma ingestão real | 1 | AUTORIZADA |
 | F1-T02 | Construir e provar o validador sintético do lote | @Carlos | SPEC-1-001 | CA-1-002..005 | Dados e integrações; TDD da SPEC | Fixtures válida, inválida, duplicada e acesso negado; repetição idempotente | Testes, relatório sanitizado e prova de zero persistência real | F1-T01 aceita e teste humano autorizado | Validador sintético aceito; dado real ainda recusado | 2 | BLOQUEADA |
 | F1-T03 | Implementar importação manual e reconciliação do lote | @Carlos | SPEC-1-002 | CA-1-007..010 | Fluxo e recuperação; Critérios de aceite | Importar fixture aprovada, fechar equação e repetir sem duplicar | Recibo de lote, contagens, consulta e teste idempotente | F1-T02 aceita; amostra real continua opcional e autorizada à parte | Caminho principal reconciliado; sem integração externa | 3 | BLOQUEADA |
 | F1-T04 | Provar falha parcial, retomada e reversão de lote | @Carlos | SPEC-1-002 | CA-1-011..012 | Fluxo e recuperação; TDD da SPEC | Simular timeout/parcial, retomar e reverter somente lote-alvo | Logs sanitizados, diff antes/depois e ausência de órfãos | F1-T03 aceita | Recuperação/reversão aceitas; histórico anterior preservado | 4 | BLOQUEADA |

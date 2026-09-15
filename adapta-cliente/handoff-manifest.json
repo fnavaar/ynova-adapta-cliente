@@ -23,7 +23,7 @@
     {"path":"03_documentos/setup-ethos/loops/LOOP-04-observabilidade.md","sha256":"d7e4cacb54e2a8a4340d34d0d8321cf363c32c497a7ee71f1dd358900cfa9b26","classification":"template-publico"},
     {"path":"03_documentos/setup-ethos/mapa-de-agentes-e-loops.md","sha256":"34125518bdb57ce9173b6e14601dcc8f95dee7f372126c27aa0daf9d9f27ae2f","classification":"template-publico"},
     {"path":"03_documentos/setup-ethos/sugestoes-conectores-automacoes.md","sha256":"d4403234c29f72c09ffc2cbcb6e015f12bb50840f6952ea424936d6d0149f6b4","classification":"template-publico"},
-    {"path":"04_fase-atual/fase.md","sha256":"af3e5888847964fdd9f8cd6ada2dfb010858f09952a21203788a93c412683cfa","classification":"fase-atual"},
+    {"path":"04_fase-atual/fase.md","sha256":"11128d4c147c439fa07e254d5c5ebd838c7035e6cbf8bab5d21f8ca9e9101cc0","classification":"fase-atual"},
     {"path":"04_fase-atual/specs/spec-1-001-contrato-do-lote-e-politica-minima.md","sha256":"6fe97a5e07618dcd23cc491fb3f28634a1f70ab9b7cd0a9acfcb650f24c6d5fa","classification":"spec-fase-atual"},
     {"path":"04_fase-atual/specs/spec-1-002-importacao-reconciliacao-e-reversao.md","sha256":"ef4aac68d4f01e6397d2952f110fb189a1b128bda7f88b645679353d0f72c14c","classification":"spec-fase-atual"},
     {"path":"04_fase-atual/specs/spec-1-003-ficha-acesso-e-fila-por-polo.md","sha256":"c105d45df86d866bcdc72cf23e3b718491e18bf1814856e40f32b9891836e033","classification":"spec-fase-atual"},
@@ -36,7 +36,7 @@
     {"path":"AGENTS.md","sha256":"739d8b9eed9dccd704a18bf6b0d7953fd9ef7627f63390a9be09f3fa39137a0c","classification":"template-publico"},
     {"path":"CLAUDE.md","sha256":"b0ccd0e51a2985739ca0e6c83a0fd46d654adf1cdd63460d5967591652a13d78","classification":"template-publico"},
     {"path":"README.md","sha256":"acb65138ee551aaa3a1a6ad373527d61fc756879e4b954f1191f3ccd1e833965","classification":"template-publico"},
-    {"path":"STATUS.md","sha256":"910d4558af2a33d8f124a37d4fb44f940b9363cc73950fee38ca8ac6455e0ca0","classification":"template-publico"},
-    {"path":"changelog.md","sha256":"6e87ee2e70ab2d59ee8759158b55613d340a811388109fbc8ed2531ab6d36862","classification":"template-publico"}
+    {"path":"STATUS.md","sha256":"190cf093bb3a83586269e86be0ce28810eb737cb5e2aeb560c69eeebfe5927af","classification":"template-publico"},
+    {"path":"changelog.md","sha256":"4f3daf9e13b093eac593928fcfb8b8b4518dcb2678307a514227ee57f0bdc19b","classification":"template-publico"}
   ]
 }
