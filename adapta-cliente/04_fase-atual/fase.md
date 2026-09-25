@@ -1,16 +1,12 @@
-# Fase 1 — Tasks gerais · Ynova Educacional
+# Fase 1 — Tarefas
 
-**Champion:** Carlos · **Deadline:** 22/09/2026 · **Estado:** 0/8 concluídas; somente F1-T01 autorizada para execução.
+<!-- fase-format:2 -->
 
-## Tasks
-
-| ID | Task | Dono | SPEC | Critério | Subseção | Recorte da prova | Evidência esperada | Pré-condições | Ponto de parada | Leva | Status |
-|---|---|---|---|---|---|---|---|---|---|---:|---|
-| F1-T01 | Fechar contrato de entrada, política e ambiente de teste | @Carlos | SPEC-1-001 | CA-1-001, CA-1-006 | Contexto e decisões fechadas; Critérios de aceite | Contrato versionado + registro B1-001..004 + aceite explícito do Champion | Contrato, matriz mínima, fixture sintética e recibo de aceite | SPECs F1 aprovadas | B1-001..004 fechados; nenhuma ingestão real | 1 | AUTORIZADA |
-| F1-T02 | Construir e provar o validador sintético do lote | @Carlos | SPEC-1-001 | CA-1-002..005 | Dados e integrações; TDD da SPEC | Fixtures válida, inválida, duplicada e acesso negado; repetição idempotente | Testes, relatório sanitizado e prova de zero persistência real | F1-T01 aceita e teste humano autorizado | Validador sintético aceito; dado real ainda recusado | 2 | BLOQUEADA |
-| F1-T03 | Implementar importação manual e reconciliação do lote | @Carlos | SPEC-1-002 | CA-1-007..010 | Fluxo e recuperação; Critérios de aceite | Importar fixture aprovada, fechar equação e repetir sem duplicar | Recibo de lote, contagens, consulta e teste idempotente | F1-T02 aceita; amostra real continua opcional e autorizada à parte | Caminho principal reconciliado; sem integração externa | 3 | BLOQUEADA |
-| F1-T04 | Provar falha parcial, retomada e reversão de lote | @Carlos | SPEC-1-002 | CA-1-011..012 | Fluxo e recuperação; TDD da SPEC | Simular timeout/parcial, retomar e reverter somente lote-alvo | Logs sanitizados, diff antes/depois e ausência de órfãos | F1-T03 aceita | Recuperação/reversão aceitas; histórico anterior preservado | 4 | BLOQUEADA |
-| F1-T05 | Construir ficha e fila por polo com RBAC server-side | @Carlos | SPEC-1-003 | CA-1-013, CA-1-014, CA-1-016 | Dados e regras; Fluxo e recuperação | Dois polos/perfis: listar, abrir e alterar somente no recorte permitido | Testes server-side, capturas sintéticas e eventos de auditoria | F1-T04 aceita; B1-005 aprovado | Acesso válido e auditoria passam; dados reais não necessários | 5 | BLOQUEADA |
-| F1-T06 | Provar isolamento entre polos e revogação de acesso | @Carlos | SPEC-1-003 | CA-1-015, CA-1-017, CA-1-018 | TDD da SPEC; Handoff e operação | Negar UI/URL/endpoint cruzados e revogar vínculo imediatamente | Matriz de testes negativos e aceite humano de Carlos | F1-T05 aceita | RBAC e revogação aceitos; sem ampliar perfis | 6 | BLOQUEADA |
-| F1-T07 | Implementar prioridade explicável e pendência de primeiro contato | @Carlos | SPEC-1-004 | CA-1-019..023 | Dados e regras; Fluxo e recuperação | Ordenar pendentes, explicar motivo, tratar empate/data ausente e recusar resultado inválido | Testes determinísticos, captura da fila e auditoria do resultado | F1-T06 aceita; B1-006 aprovado | Regra determinística aceita; sem mensagem/follow-up automático | 7 | BLOQUEADA |
-| F1-T08 | Executar prova ponta a ponta e aceite da Fase 1 | @Carlos | SPEC-1-004 | CA-1-024 | Handoff e operação; Critérios de aceite | Validar fixture, importar/reconciliar, abrir fila isolada, explicar prioridade e registrar resultado | Roteiro completo, evidências das 4 SPECs e aceite explícito de Carlos | F1-T07 aceita e regressões anteriores verdes | Fase 1 demonstrada; aguardar teste humano, sem iniciar Fase 2 | 8 | BLOQUEADA |
+- [ ] F1-T01 — Importar a primeira planilha real com o Champion e fechar o contrato de dados @Carlos !02/10/2026 #projeto
+  > SPEC-1-001 · CA-1-001..006 · leva 1 · ELEGÍVEL (aguarda autorização de execução). O Carlos aponta a planilha real dentro da própria task; o sistema valida a estrutura, consolida por CPF/nº matrícula e devolve recibo reconciliado com rejeições explicadas. Prova: carga real importada, contagem reconciliada, reenvio idempotente, rollback de lote.
+- [ ] F1-T02 — Construir ficha do aluno e termômetro com o catálogo de eventos do Champion @Carlos !09/10/2026 #projeto
+  > SPEC-1-002 · CA-1-007..012 · leva 2 · BLOQUEADA (depende de F1-T01). Catálogo de eventos informado pelo Carlos na produção; termômetro explicável com data/hora e justificativa; evento ausente = dado indisponível. Prova: ficha real com estado calculado e histórico append-only.
+- [ ] F1-T03 — Implementar RBAC server-side por função com isolamento por polo @Carlos !16/10/2026 #projeto
+  > SPEC-1-003 · CA-1-013..018 · leva 3 · BLOQUEADA (depende de F1-T02). Backend fechado, papéis gestão/coordenação/polo, prova negativa de acesso cruzado em UI/URL/endpoint, revogação imediata, trilha de auditoria append-only. Prova: dois polos sintéticos com perfis distintos.
+- [ ] F1-T04 — Executar a jornada ponta a ponta da fundação e registrar o aceite da Fase 1 @Carlos !23/10/2026 #projeto
+  > SPEC-1-004 · CA-1-019..022 · leva 4 · BLOQUEADA (depende de F1-T01..T03). O próprio Champion executa: importar planilha real → recibo → ficha com termômetro → tentativa de acesso cruzado negada → aceite explícito. Prova: evidências registradas no changelog; sem aceite, a fase não fecha.
