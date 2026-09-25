@@ -1,5 +1,5 @@
 # STATUS — Ynova Educacional
 
-**Fase:** 1 · **Execução:** 0/8 · **Champion:** Carlos · **Deadline:** 22/09/2026
+**Recorte:** onboarding + acompanhamento de leads (escopo definitivo v2.0, 25/09) · **Fase:** 1 · **Execução:** 0/4 · **Champion:** Carlos · **Deadline F1-T01:** 02/10/2026
 
-F1-T01 é a única autorizada para execução. F1-T02..T08 permanecem bloqueadas até a conclusão, as provas e o teste humano da F1-T01. Nenhuma implementação, integração ou ingestão real foi iniciada.
+O recorte comercial foi encerrado como ciclo futuro possível, sem gatilho de retorno (decisão do consultor, 25/09). As SPECs/tasks F1 do novo recorte são o conjunto canônico e único: F1-T01 (importação da primeira planilha real com o Champion) é a única elegível e aguarda autorização de execução; F1-T02..T04 permanecem bloqueadas até a conclusão, as provas e o teste humano da task anterior. Nenhuma implementação, integração ou dado real foi iniciado. Zero API em todo o desenho.
