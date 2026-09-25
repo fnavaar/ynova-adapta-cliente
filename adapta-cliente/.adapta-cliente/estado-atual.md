@@ -6,8 +6,8 @@
 - etapa: bloqueada
 - autorizacao_implementacao: ausente
 - teste_humano: pendente
-- verificacao_automatica: pendente — análise do baseline concluída; implementação não iniciada
+- verificacao_automatica: pendente — análise somente leitura concluída; baseline do Skip não possui implementação/telas de importação, collection acadêmica ou testes executáveis configurados
 - aprendizado: pendente
-- ultima_acao: análise de F1-T01; identificada divergência de sequência entre CA-1-004 (ficha) e F1-T02 em 2026-09-25
-- proxima_acao: consultar o autor das SPECs sobre a tela/escopo de CA-1-004 antes de autorizar implementação
-- atualizado_em: 2026-09-25T11:33:23-03:00
+- ultima_acao: bloqueio registrado no STATUS e changelog após análise de F1-T01 e confirmação do conflito CA-1-004/F1-T02 em 2026-09-25
+- proxima_acao: aguardar decisão do autor/consultor sobre o escopo de CA-1-004 antes de autorizar implementação
+- atualizado_em: 2026-09-25T11:39:48-03:00
