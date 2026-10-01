@@ -1,3 +1,11 @@
+## 2026-10-01 — Política da CEO: preservar dados no único ambiente de produção
+
+- A CEO confirmou que existe somente um ambiente de produção e determinou manter os dados nele.
+- O Preview não deve ser tratado como base separada. Nenhum CSV sintético ou real foi importado por esta rodada; nenhum registro foi excluído, limpo, movido ou revertido.
+- O handoff local `artifacts/F1-T01-checkpoint.md`, `STATUS.md`, `04_fase-atual/fase.md` e `.adapta-cliente/estado-atual.md` foram alinhados para orientar o teste apenas na produção e proibir limpeza ou rollback sem autorização explícita.
+- As fixtures sintéticas, se usadas, geram registros persistentes em produção e podem aparecer nas consultas/indicadores; essa permanência deve ser aceita antes de importar. A primeira planilha real ainda é exigida pela SPEC e `SENHA_ALUNO` permanece excluída.
+- CA-1-006 (rollback) segue pendente; não foi testado em produção. F1-T01 continua aguardando o teste e aceite humanos do Champion. A SPEC não foi alterada.
+
 ## 2026-09-30 — F1-T01 publicada; aguardando teste humano
 
 - Skip project `Projeto Engajamento - Ynova` (id 61372): versão 0.0.4 (`d8d6d24`) passou setup, análise estática, build, integrações e testes do pipeline.
