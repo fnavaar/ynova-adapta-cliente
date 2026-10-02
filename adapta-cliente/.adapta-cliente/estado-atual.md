@@ -5,9 +5,9 @@
 - spec: adapta-cliente/04_fase-atual/specs/spec-1-001-importacao-com-o-champion.md
 - etapa: em_correcao
 - autorizacao_implementacao: confirmada em 2026-09-25 12:01 -03:00 — “Ficha mínima já em F1-T01”; autorização do plano de migração, hook, tela, testes e publicação
-- teste_humano: falhou em 2026-10-02 — a CEO informou que a tentativa de importar a planilha deu problema; logs de produção mostram validação HTTP 200 e confirmação HTTP 500 após 30,21 s; resultado persistido do lote ainda não confirmado
-- verificacao_automatica: local isolada passou em 2026-10-02: node --check do hook e teste 8/8; esbuild transformou a tela TSX sem erro; reprodução do parser sobre a cópia local: 15.680 aceitas, 0 rejeitadas, SENHA_ALUNO não exibida. Isso não valida transação nem timeout do Skip Cloud. QA integrado oficial não executado.
-- aprendizado: pendente — registrar causa reutilizável/ausência de sinal após fechar a correção
-- ultima_acao: correção mínima (tolerar só uma célula excedente vazia; rejeitar excedente com valor; tornar registro de rejeições explícito na UI; código de erro correlacionável) permanece no working tree do Skip. Produção segue v0.0.4 (`d8d6d24`). `.skip.config.json` preexistente permanece intacta e pendente; não foi chamado finalize, commit ou publish. Nenhum dado da produção foi reenviado, criado, excluído ou revertido nesta rodada.
-- proxima_acao: resolver com a CEO o caminho seguro para separar ou incluir `.skip.config.json` no QA oficial; até lá, não chamar o finalize do Skip nem reenviar o CSV. Depois do QA e publicação autorizados, conferir o histórico do lote e pedir novo teste humano na produção, mantendo os dados.
-- atualizado_em: 2026-10-02T14:00:58-03:00
+- teste_humano: falhou em 2026-10-02 — a CEO informou que a tentativa de importar a planilha deu problema; log confirma validação HTTP 200 e confirmação HTTP 500 após 30,21 s; ainda não se verificou no histórico se o lote/registro persistiu
+- verificacao_automatica: correção em 0.0.5 (`40cd26e`) passou QA oficial: setup, análise estática, build, integrações e testes. Reprodução local adicional do parser: 8/8 testes, 15.680 linhas locais aceitas, 0 rejeitadas; sintaxe TSX validada. Isso não valida o resultado da confirmação no banco de produção.
+- aprendizado: pendente — registrar causa reutilizável/ausência de sinal após o teste humano e fechamento do debug
+- ultima_acao: v0.0.5 publicada em produção (`https://projeto-engajamento-ynova-4ce46.goskip.app`); tela “Acesso restrito” verificada. `.skip.config.json` continua pendente e intacta no working tree, não incluída na publicação. Não houve reenvio, importação, exclusão, limpeza ou rollback; logs continuam mostrando somente o erro original.
+- proxima_acao: Carlos entrar na produção, abrir Histórico de lotes e conferir a tentativa de 02/10; enviar apenas ID, estado e totais (sem dados pessoais). Não reenviar CSV até verificar resultado do lote. Se houver falha/lote concluído, parar e aguardar conferência; se não aparecer, registrar evidência visível e parar para decidir com a CEO antes de qualquer nova gravação.
+- atualizado_em: 2026-10-02T14:07:26-03:00
