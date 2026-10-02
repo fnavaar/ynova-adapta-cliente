@@ -1,11 +1,11 @@
-## 2026-10-02 — DEBUG F1-T01: verificação local isolada
+## 2026-10-02 — DEBUG F1-T01: correção v0.0.5 publicada, aguarda reconciliação humana
 
-- Reproduzi o comportamento do parser localmente na cópia disponível: a versão anterior rejeitava todas as 15.680 linhas por uma célula vazia final excedente; com tolerância restrita a exatamente uma célula vazia no fim, foram 15.680 aceitas e 0 rejeitadas. Célula extra não vazia segue rejeitada. Nenhuma escrita de produção ocorreu.
-- Verificação isolada da cópia atual: `node --check` do hook, `node --test` da suíte (8/8) e transformação esbuild da tela TSX passaram. Essa suíte cobre o parser, não a gravação/transação longa no runtime do Skip Cloud.
-- Produção segue na v0.0.4 (`d8d6d24`). A tentativa humana anterior continua HTTP 500 em 30,21 s; o estado do lote não foi consultado por falta de forma segura/read-only. Não foi feito reenvio, limpeza, exclusão, rollback, commit nem publish nesta etapa.
-- Causa permanece provável, não confirmada: o hash da cópia local difere do hash da confirmação registrada. A causa do 500 e a integridade do resultado anterior precisam ser confirmadas antes de novo envio.
-- `.skip.config.json` é uma alteração preexistente no Skip working tree junto com o patch. O finalize oficial agrega as alterações pendentes; foi mantida intacta. QA oficial e publicação pendentes enquanto não houver caminho autorizado sem incorporar ou descartar essa alteração.
-- F1-T01 continua `em_correcao`; não iniciar teste humano na produção até passar QA e publicar a correção.
+- Skip QA oficial passou: setup, análise estática, build, integrações e testes. Versão `0.0.5` (`40cd26e`) publicada em produção às 2026-10-02 17:05:28Z; a tela publicada foi verificada como “Acesso restrito”.
+- A correção tolera exatamente uma célula vazia excedente no final da linha; conteúdo excedente continua rejeitado. UI mostra “Registrar rejeições” quando zero linhas foram aceitas e orienta que os dados permanecem na produção; erro devolve referência/código quando disponível.
+- Teste local isolado passou 8/8; sintaxe do hook passou; transformação TSX passou; reprodução local da cópia disponível validou 15.680 linhas, 15.680 aceitas, 0 rejeitadas, sem exibir `SENHA_ALUNO`. Teste local não prova a gravação/transação do Skip Cloud.
+- A confirmação humana anterior retornou HTTP 500 após 30,21 s. O estado do lote não pôde ser confirmado pelas ferramentas/logs de backend. A cópia local tem hash diferente do hash da requisição: causa da falha original segue provável, não confirmada.
+- Não houve novo POST de importação desde a tentativa original. Nenhum dado foi criado, removido, limpo ou revertido pela correção. `.skip.config.json` permanece pendente, intacta e fora da v0.0.5.
+- Próxima ação: Champion consultar o Histórico de lotes em produção e informar somente ID, estado e totais da tentativa; não reenviar arquivo até a reconciliação. F1-T01 continua em `em_correcao`; após essa conferência, solicitar novo teste humano. CA-1-006 segue pendente.
 
 ## 2026-10-02 — DEBUG F1-T01: confirmação de importação HTTP 500
 
