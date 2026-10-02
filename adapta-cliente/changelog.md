@@ -1,10 +1,20 @@
+## 2026-10-02 — DEBUG F1-T01: confirmação de importação HTTP 500
+
+- A CEO relatou que a tentativa de importar a planilha deu problema. Logs de produção: validação `mode=validar` HTTP 200 em 8,93 s às 11:23:42 -03; confirmação `mode=confirmar` HTTP 500 em 30,21 s às 11:25:24 -03. Os logs não contêm a causa técnica, a resposta nem o estado do lote.
+- A cópia local disponível tem 45 cabeçalhos, 15.680 linhas de dados e uma célula excedente vazia por linha; a versão anterior do hook rejeita essas linhas por largura. Patch local estrito aceita uma única célula excedente vazia e ainda rejeita qualquer excesso não vazio. Sobre essa cópia, validação local passou em 15.680 aceitas, 0 rejeitadas; sintaxe do hook passou. Não houve gravação.
+- O SHA-256 da cópia local (`4779389f...`) não coincide com o hash registrado na confirmação (`221dc31f...`). Portanto, a correspondência do arquivo e a causa-raiz não estão confirmadas. O 500 após 30,21 s pode ter resultado de uma confirmação demorada; não há evidência suficiente para afirmar timeout ou falha parcial.
+- Patch também preparou bloqueio da confirmação na UI quando preview tem zero linhas aceitas e apresentação do código de correlação do backend. Regressão cobre uma célula excedente vazia e excesso não vazio.
+- Alterações do hook/UI/teste estão no working tree Skip, não commitadas; QA oficial não executado nem publicado. `skip_project_status` lista `.skip.config.json` como alteração preexistente junto com a correção; o finalize do projeto inclui a working tree inteira, então não toquei nessa alteração nem finalizei.
+- Nenhum reenvio, exclusão, limpeza ou rollback foi feito. A produção segue na versão 0.0.4 (`d8d6d24`). Não afirmar se o lote foi ou não gravado: o estado deve ser conferido pelo histórico do app antes de nova tentativa.
+- Estado F1-T01: `em_correcao`. Próximo passo: resolver um caminho de QA que preserve a alteração preexistente e todos os dados da produção; executar QA; só então publicar e solicitar novo teste humano. Relatório: `artifacts/F1-T01-debug-2026-10-02.md`.
+
 ## 2026-10-01 — Política da CEO: preservar dados no único ambiente de produção
 
 - A CEO confirmou que existe somente um ambiente de produção e determinou manter os dados nele.
 - O Preview não deve ser tratado como base separada. Nenhum CSV sintético ou real foi importado por esta rodada; nenhum registro foi excluído, limpo, movido ou revertido.
 - O handoff local `artifacts/F1-T01-checkpoint.md`, `STATUS.md`, `04_fase-atual/fase.md` e `.adapta-cliente/estado-atual.md` foram alinhados para orientar o teste apenas na produção e proibir limpeza ou rollback sem autorização explícita.
-- As fixtures sintéticas, se usadas, geram registros persistentes em produção e podem aparecer nas consultas/indicadores; essa permanência deve ser aceita antes de importar. A primeira planilha real ainda é exigida pela SPEC e `SENHA_ALUNO` permanece excluída.
-- CA-1-006 (rollback) segue pendente; não foi testado em produção. F1-T01 continua aguardando o teste e aceite humanos do Champion. A SPEC não foi alterada.
+- As fixtures sintéticas, se usadas, geram registros persistentes em produção e podem aparecer nas consultas/indicadores; essa permanência deve ser aceita antes de importar. A primeira planilha real ainda é exigida e `SENHA_ALUNO` permanece excluída.
+- CA-1-006 (rollback) segue pendente; não foi testado em produção. F1-T01 continuava aguardando o teste e aceite humanos. A SPEC não foi alterada.
 
 ## 2026-09-30 — F1-T01 publicada; aguardando teste humano
 
